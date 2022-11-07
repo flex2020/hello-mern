@@ -10,7 +10,7 @@ const config = require('config');
 router.post('/', 
 [ //--- 유효성 검사하는 부분
   check('name', 'Name is required.').not().isEmpty(),
-  check('email', 'Please enter your email.').not().isEmpty(),
+  check('email', 'Please enter your email.').isEmail(),
   check('password', 'Please enter a password with 8 or more').isLength({
     min: 8,
   }),
